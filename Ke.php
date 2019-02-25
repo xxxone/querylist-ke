@@ -5,7 +5,7 @@
  * Ke searcher
  */
 
-namespace QL\Ext;
+namespace macwu;
 
 use QL\Contracts\PluginContract;
 use QL\QueryList;
