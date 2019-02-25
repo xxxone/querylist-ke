@@ -18,7 +18,7 @@ class Ke implements PluginContract
     protected $httpOpt = [];
     const API = 'https://nj.zu.ke.com/zufang/';
     const RULES = [
-      'apartment' => ['content__list--item--brand','text'],
+      'apartment' => ['.content__list--item--brand','text'],
     ];
     const RANGE = '.content__list';
 
@@ -69,7 +69,14 @@ class Ke implements PluginContract
 
     protected function query($page = 1)
     {
-        $qu = '/pg'.$this->pageNumber.'rs'.$this->keyword;
+        if(empty($this->keyword))
+            $qu = '';
+        else{
+            if($page == 1)
+                $qu = '/rs'.$this->keyword.'/';
+            else
+                $qu = 'pg'.$page.'rs'.$this->keyword.'/';
+        }
         $this->ql->get(self::API.$qu,[],$this->httpOpt);
         return $this->ql;
     }
