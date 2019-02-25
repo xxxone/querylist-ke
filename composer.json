@@ -1,0 +1,22 @@
+{
+    "name": "macwu/querylist-ke",
+    "description": "QueryList Plugin: Ke searcher.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "mac",
+            "email": "1767575253@qq.com"
+        }
+    ],
+    "require": {
+        "PHP":">=7.0"
+    },
+    "require-dev": {
+        "jaeger/querylist": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "QL\\Ext\\": ""
+        }
+    },
+}
